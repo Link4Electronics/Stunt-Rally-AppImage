@@ -22,6 +22,7 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
+make-aur-package mygui-ogre
 make-aur-package ogre-legacy
 make-aur-package stuntrally-git
 
