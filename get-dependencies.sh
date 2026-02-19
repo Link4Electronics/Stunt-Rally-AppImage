@@ -10,6 +10,7 @@ pacman -Syu --noconfirm \
     boost      \
     bullet     \
     enet       \
+    libdecor   \
     mygui-ogre \
     openal     \
     sdl2       \
