@@ -11,7 +11,7 @@ pacman -Syu --noconfirm \
     bullet              \
     clang               \
     cmake               \
-    foxygen             \
+    doxygen             \
     enet                \
     hicolor-icon-theme  \
     libdecor            \
