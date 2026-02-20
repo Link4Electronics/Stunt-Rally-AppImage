@@ -35,7 +35,7 @@ git clone "$REPO" ./stuntrally
 echo "$VERSION" > ~/version
 
 cd ./stuntrally
-python3 build-sr3-Linux.py
+python build-sr3-Linux.py
 mkdir -p build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
