@@ -9,7 +9,9 @@ echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     boost               \
     bullet              \
+    clang               \
     cmake               \
+    foxygen             \
     enet                \
     hicolor-icon-theme  \
     libdecor            \
@@ -19,7 +21,7 @@ pacman -Syu --noconfirm \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano ! llvm
 
 # Comment this out if you need an AUR package
 #make-aur-package ogre-next2
