@@ -15,8 +15,8 @@ pacman -Syu --noconfirm \
     enet                \
     hicolor-icon-theme  \
     libdecor            \
-    ogre-next           \
     openal              \
+    python              \
     sdl2
 
 echo "Installing debloated packages..."
@@ -25,17 +25,17 @@ get-debloated-pkgs --add-common --prefer-nano ! llvm
 
 # Comment this out if you need an AUR package
 #make-aur-package ogre-next2
-make-aur-package mygui-ogre
 
 # If the application needs to be manually built that has to be done down here
 echo "Making nightly build of Stunt Rally..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/stuntrally/stuntrally3"
 VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
-git clone --recursive --depth 1 "$REPO" ./stuntrally
+git clone "$REPO" ./stuntrally
 echo "$VERSION" > ~/version
 
 cd ./stuntrally
+python3 build-sr3-Linux.py
 mkdir -p build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
