@@ -9,6 +9,7 @@ echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     boost               \
     bullet              \
+    cmake               \
     enet                \
     hicolor-icon-theme  \
     libdecor            \
