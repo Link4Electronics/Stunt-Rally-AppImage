@@ -13,6 +13,7 @@ pacman -Syu --noconfirm \
     enet                \
     hicolor-icon-theme  \
     libdecor            \
+    mygui               \
     ogre-next           \
     openal              \
     sdl2
