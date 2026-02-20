@@ -7,31 +7,33 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    boost      \
-    bullet     \
-    enet       \
-    libdecor   \
-    mygui-ogre \
-    openal     \
-    sdl2       \
-    tinyxml    \
-    tinyxml2
+    boost               \
+    bullet              \
+    enet                \
+    hicolor-icon-theme  \
+    libdecor            \
+    ogre                \
+    openal              \
+    sdl2
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
-make-aur-package mygui-ogre
-make-aur-package ogre-legacy
-make-aur-package stuntrally-git
+#make-aur-package 
 
 # If the application needs to be manually built that has to be done down here
+echo "Making nightly build of Stunt Rally..."
+echo "---------------------------------------------------------------"
+REPO="https://github.com/stuntrally/stuntrally3"
+VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
+git clone --recursive --depth 1 "$REPO" ./stuntrally
+echo "$VERSION" > ~/version
 
-# if you also have to make nightly releases check for DEVEL_RELEASE = 1
-#
-# if [ "${DEVEL_RELEASE-}" = 1 ]; then
-# 	nightly build steps
-# else
-# 	regular build steps
-# fi
+cd ./stuntrally
+mkdir -p build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
+mv -v stuntrally3 ../../AppDir/bin
+mv -v dist/stuntrally3.desktop ../../AppDir
