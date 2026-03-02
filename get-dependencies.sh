@@ -46,7 +46,8 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     mv -v dist/stuntrally3.desktop ../../AppDir
 else
     mkdir -p ./AppDir/bin
-    wget "https://master.dl.sourceforge.net" -O StuntRally-3.3-Linux.txz
+    #https://sourceforge.net/projects/stuntrally/files/3.3/StuntRally-3.3-Linux.txz/download
+    wget https://master.dl.sourceforge.net/project/stuntrally/files/stuntrally/3.3/StuntRally-3.3-Linux.txz
     bsdtar -xvf StuntRally-3.3-Linux.txz
     mv -v StuntRally-3.3-Linux/* ./AppDir/bin
 fi
