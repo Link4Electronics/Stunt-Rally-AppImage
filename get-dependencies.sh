@@ -15,6 +15,7 @@ pacman -Syu --noconfirm \
     enet                \
     hicolor-icon-theme  \
     libdecor            \
+    ogre                \
     openal              \
     python              \
     sdl2
