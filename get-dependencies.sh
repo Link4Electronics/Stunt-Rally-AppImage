@@ -47,7 +47,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
 else
     mkdir -p ./AppDir/bin
     #https://sourceforge.net/projects/stuntrally/files/3.3/StuntRally-3.3-Linux.txz/download
-    wget https://downloads.sourceforge.net/project/stuntrally/files/3.3/StuntRally-3.3-Linux.txz
+    wget https://netactuate.dl.sourceforge.net/project/stuntrally/3.3/StuntRally-3.3-Linux.txz
     bsdtar -xvf StuntRally-3.3-Linux.txz
     mv -v StuntRally-3.3-Linux/* ./AppDir/bin
 fi
