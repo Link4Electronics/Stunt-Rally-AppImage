@@ -15,7 +15,7 @@ pacman -Syu --noconfirm \
     enet                \
     hicolor-icon-theme  \
     libdecor            \
-    ogre                \
+    ogre-next           \
     openal              \
     python              \
     sdl2
@@ -48,5 +48,5 @@ else
     mkdir -p ./AppDir/bin
     wget https://downloads.sourceforge.net/project/stuntrally/files/3.3/StuntRally-3.3-Linux.txz
     bsdtar -xvf StuntRally-3.3-Linux.txz
-    mv -v StuntRally-3.3-Linux ./AppDir/bin/stuntrally3
+    mv -v StuntRally-3.3-Linux/* ./AppDir/bin
 fi
