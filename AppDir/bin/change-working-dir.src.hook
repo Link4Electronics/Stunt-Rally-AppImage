@@ -1,0 +1,8 @@
+#!/bin/false
+dir=${XDG_DATA_HOME:-~/.local/share}/stuntrally3
+mkdir -p "$dir"/config
+mkdir -p "$dir"/data
+ln -sf "$APPDIR"/bin/config/* "$dir"/config
+ln -sf "$APPDIR"/bin/data/* "$dir"/data
+ln -sf "$APPDIR"/bin/plugins.cfg "$dir"/plugins.cfg
+cd "$dir"
