@@ -46,10 +46,12 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     mv -v dist/stuntrally3.desktop ../../AppDir
 else
     mkdir -p ./AppDir/bin
-    wget https://netactuate.dl.sourceforge.net/project/stuntrally/3.3/StuntRally-3.3-Linux.txz
-    bsdtar -xvf StuntRally-3.3-Linux.txz
-    #mv -v StuntRally-3.3-Linux/* ./AppDir/bin
-    cd StuntRally-3.3-Linux
+    VERSION=3.3
+    echo "$VERSION" > ~/version
+    wget https://netactuate.dl.sourceforge.net/project/stuntrally/$VERSION/StuntRally-$VERSION-Linux.txz
+    bsdtar -xvf StuntRally-$VERSION-Linux.txz
+    #mv -v StuntRally-$VERSION-Linux/* ./AppDir/bin
+    cd StuntRally-$VERSION-Linux
     mv -v bin config data plugins.cfg ../AppDir/bin
     mv -v lib/* /usr/lib
 fi
