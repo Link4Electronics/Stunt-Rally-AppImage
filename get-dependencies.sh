@@ -44,5 +44,8 @@ else
     mkdir -p ./AppDir/bin
     wget https://netactuate.dl.sourceforge.net/project/stuntrally/3.3/StuntRally-3.3-Linux.txz
     bsdtar -xvf StuntRally-3.3-Linux.txz
-    mv -v StuntRally-3.3-Linux/* ./AppDir/bin
+    #mv -v StuntRally-3.3-Linux/* ./AppDir/bin
+    cd StuntRally-3.3-Linux
+    mv -v bin config data plugins.cfg ../AppDir/bin
+    mv -v lib/* /usr/lib
 fi
