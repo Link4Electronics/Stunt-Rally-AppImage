@@ -6,15 +6,15 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-    bullet              \
-    enet                \
-    libdecor            \
-    mygui               \
-    ogre-next           \
-    openal              \
-    python              \
-    sdl2
+pacman -Syu --noconfirm libdecor
+#    bullet              \
+#    enet                \
+#    libdecor            \
+#    mygui               \
+#    ogre-next           \
+#    openal              \
+#    python              \
+#    sdl2
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
