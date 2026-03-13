@@ -7,6 +7,7 @@ export ARCH
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
+export APPNAME=Stunt Rally
 export STARTUPWMCLASS=
 export DEPLOY_OPENGL=1
 
